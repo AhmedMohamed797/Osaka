@@ -1,0 +1,211 @@
+/* ^===========> Global Styles <===========  */
+:root {
+  --main-color: #f44336;
+  --default-duratoin: 500ms;
+}
+
+html {
+  scroll-padding-top: 68px;
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.title h3,
+.title h2 {
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #f44336;
+}
+
+/* *===========> Scrollbar <===========  */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* &===========> Our Utilites <===========  */
+.text-main {
+  color: var(--main-color);
+}
+
+.bg-main {
+  background-color: var(--main-color);
+}
+
+.isolate {
+  isolation: isolate;
+}
+
+.bg-light-dotted {
+  background-image: url("../imgs/light_dot.jpg");
+}
+
+.bg-dark-dotted {
+  background-image: url("../imgs/dark_dot.jpg");
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.text-opacity-10 {
+  opacity: 0.1;
+}
+
+.end-80 {
+  left: 80%;
+}
+
+/* &===========> Navbar <===========  */
+.navbar {
+  height: 68px;
+}
+
+.navbar .nav-link.active {
+  color: var(--main-color);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* *===========> Home Section <===========  */
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../imgs/me.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.home .social-links li {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #777;
+  transition: border-color var(--default-duratoin),
+    scale var(--default-duratoin), rotate var(--default-duratoin),
+    color var(--default-duratoin);
+}
+
+.home .social-links li:hover {
+  color: var(--main-color);
+  border-color: #fff;
+  scale: 1.1;
+  rotate: 10deg;
+}
+
+/* ^===========> Services Section <=========== */
+.services .inner h3::before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  transform: translateX(-50%);
+  transition: width var(--default-duratoin);
+}
+
+.services .inner:hover h3::before {
+  width: 75%;
+}
+
+.services .inner .icon {
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  transition: color var(--default-duratoin);
+}
+
+.services .inner:hover .icon {
+  color: var(--main-color);
+}
+
+/* ~===========> Portfolio Section <=========== */
+.portfolio .nav .active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.portfolio .nav-link {
+  color: inherit;
+}
+
+.portfolio .inner .card-detalis {
+  position: absolute;
+  width: 85%;
+  height: 0%;
+  left: 50%;
+  top: -100px;
+  transform: translateX(-50%);
+  transition: height var(--default-duratoin), top var(--default-duratoin);
+  z-index: 1;
+}
+
+.portfolio .inner:hover .card-detalis {
+  height: 85%;
+  top: 0;
+}
+
+.portfolio .inner .card-detalis h3,
+.portfolio .inner .card-detalis div {
+  opacity: 0;
+}
+
+.portfolio .inner:hover .card-detalis h3,
+.portfolio .inner:hover .card-detalis div {
+  transition: opacity var(--default-duratoin) var(--default-duratoin);
+  opacity: 1;
+}
+
+.portfolio .inner img {
+  transition: scale var(--default-duratoin);
+}
+
+.portfolio .inner:hover img {
+  scale: 1.3;
+}
+
+/* *===========> Testimonals Section <=========== */
+.testimonals .carousel-item img {
+  width: 70px;
+  height: 70px;
+  outline: 1px solid #ddd;
+}
+
+.testimonals .carousel-item h3::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background-color: var(--main-color);
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* !===========> Contact Section <=========== */
+textarea.form-control {
+  resize: vertical;
+  min-height: 150px;
+  max-height: 300px;
+}
